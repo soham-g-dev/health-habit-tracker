@@ -1,6 +1,16 @@
 .abcd{
-    border: 2px solid red;
-    padding: 10px;
-    margin: 10px;
-    background-color: aqua;
+    width:150px;
+    height:50px;
+    border: 10px;
+    padding: 2px;
+    margin: 2px;
+    font-weight: bold;
+    background-color: #ffffff;
+    border-radius: 8px;
+    text-align: center;
+}
+body {
+    background-color: #f0d4e2;
+    margin: ;
+    padding: 20px;
 }
