@@ -1,113 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Health Tracker Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Health Records Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="header">
-    <h1>Health & Habit Tracker</h1>
 
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="logo"><img src="Logo.png" alt=""></div>
+  <nav>
+    <a class="active">🏠 Home</a>
+    <a>ℹ️ About</a>
+    <a>📞 Contact</a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<header class="topbar">
+  <h1>Health Records <span>Dashboard</span></h1>
 </header>
 
-<div class="dashboard">
-
-    <!-- Step Tracker -->
-    <div class="card step-card">
-        <div class="step-info">
-            <h3>Step Tracker</h3>
-            <p>4,000 / 10,000 steps covered</p>
-        </div>
-
-        <div class="bar-graph">
-            <div class="bar" style="height:40%"></div>
-            <div class="bar" style="height:60%"></div>
-            <div class="bar" style="height:30%"></div>
-            <div class="bar" style="height:80%"></div>
-        </div>
-    </div>
-
-    <!-- Weekly Achievement -->
-    <div class="card">
-        <h3>Weekly Achievement</h3>
-        <div class="progress">
-            <div class="progress-fill"></div>
-        </div>
-    </div>
-
-    <!-- Sleep Tracker -->
-<div class="card">
-    <h3>Sleep Tracker</h3>
-
-    <div class="bar-graph large">
-
-        <div class="bar-item">
-            <div class="bar" style="height:70%"></div>
-            <span>Mon</span>
-        </div>
-
-        <div class="bar-item">
-            <div class="bar" style="height:50%"></div>
-            <span>Tue</span>
-        </div>
-
-        <div class="bar-item">
-            <div class="bar" style="height:80%"></div>
-            <span>Wed</span>
-        </div>
-
-        <div class="bar-item">
-            <div class="bar" style="height:65%"></div>
-            <span>Thu</span>
-        </div>
-
-        <div class="bar-item">
-            <div class="bar" style="height:75%"></div>
-            <span>Fri</span>
-        </div>
-
-        <div class="bar-item">
-            <div class="bar" style="height:60%"></div>
-            <span>Sat</span>
-        </div>
-
-        <div class="bar-item">
-            <div class="bar" style="height:85%"></div>
-            <span>Sun</span>
-        </div>
-
-    </div>
+<!-- INPUTS -->
+<div class="input-box">
+  <input id="stepsInput" type="number" placeholder="Steps">
+  <input id="sleepInput" type="number" placeholder="Sleep (hrs)">
+  <button id="addBtn">Add</button>
 </div>
 
-    <!-- Hydration -->
-    <div class="card">
-        <h3>Current Hydration</h3>
-        <div class="bar-graph large">
-            <div class="bar" style="height:60%"></div>
-            <div class="bar" style="height:40%"></div>
-            <div class="bar" style="height:90%"></div>
-        </div>
-    </div>
+<section class="grid">
 
-    <!-- Other Activities -->
-    <div class="card">
-        <h3>Other Activities</h3>
-        <div class="pill">🚴 Cycling</div>
-        <div class="pill">🧘 Meditation</div>
-        <div class="pill">🏊 Swimming</div>
-    </div>
+  <!-- METRICS -->
+  <div class="card metric">
+    <p>Calories Burned</p>
+    <h2 id="calories">0</h2>
+  </div>
 
-    <!-- Diet -->
-    <div class="card diet">
-        <h3>Diet & Nutrition</h3>
-        <p>Balanced diet maintained today ✔</p>
-    </div>
+  <div class="card metric">
+    <p>Steps</p>
+    <h2 id="steps">0</h2>
+  </div>
 
-</div>
-<footer class="footer">
-    <p> 2025 Health Tracker | Built with ❤️ by Code Wave</p>
-</footer>
+  <div class="card metric">
+    <p>Sleep</p>
+    <h2 id="sleep">0h</h2>
+  </div>
 
+  <!-- ANALYTICS -->
+  <div class="card chart">
+    <h3>Activity Analytics (Mon–Sun)</h3>
+    <canvas id="activityChart" width="700" height="260"></canvas>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="card progress">
+    <h3>Daily Progress</h3>
+
+    <label>Steps</label>
+    <progress id="stepsProgress" max="100" value="0"></progress>
+
+    <label>Sleep</label>
+    <progress id="sleepProgress" max="100" value="0"></progress>
+  </div>
+
+  <!-- AI -->
+  <div class="card ai">
+    <h3>AI Health Insight</h3>
+    <p id="aiText"></p>
+  </div>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
